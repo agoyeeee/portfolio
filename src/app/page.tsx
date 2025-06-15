@@ -9,6 +9,8 @@ import { Mailchimp } from "@/components";
 import { Posts } from "@/components/blog/Posts";
 import { Meta, Schema } from "@/once-ui/modules";
 
+<meta name="google-site-verification" content="YO5W09C3n7SAe5m9tzb-bhu7DfRkZfKeqnxdigaHDG0" />
+
 export async function generateMetadata() {
   return Meta.generate({
     title: home.title,
