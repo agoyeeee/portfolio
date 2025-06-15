@@ -1,6 +1,22 @@
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
-const baseURL = "https://demo.magic-portfolio.com";
+const baseURL = "https://agoyeeee-portfolio.vercel.app"; 
 
+const seoConfig = {
+  title: "Prayoga Putra - Software Engineer & IT Student",
+  description: "Portfolio of Prayoga Putra, a web developer and IT student from Surakarta specializing in Laravel, Vue.js, and modern web technologies.",
+  keywords: [
+    "web developer",
+    "software engineer",
+    "Laravel developer",
+    "Vue.js",
+    "portfolio",
+    "Surakarta",
+    "Indonesia"
+  ],
+  author: "Prayoga Putra",
+  image: `${baseURL}/images/og-image.jpg`, // Pastikan file ini ada
+  twitterHandle: "@agoyeeee"
+};
 const routes = {
   "/": true,
   "/about": true,
@@ -142,4 +158,4 @@ const mailchimp = {
   },
 };
 
-export { routes, protectedRoutes, effects, style, display, mailchimp, baseURL, font };
+export { routes, protectedRoutes, effects, style, display, mailchimp, baseURL, seoConfig, font };
