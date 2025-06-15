@@ -1,4 +1,3 @@
-
 const person = {
   firstName: "Prayoga",
   lastName: "Putra",
@@ -49,12 +48,58 @@ const social = [
   },
 ];
 
+const seo = {
+  title: `${person.name} - ${person.role}`,
+  description: `Portfolio of ${person.name}, a ${person.role} from Surakarta, Indonesia. Specializing in web development, Laravel, Vue.js, and digital solutions.`,
+  keywords: [
+    "Prayoga Putra",
+    "Software Engineer",
+    "Web Developer",
+    "Laravel Developer",
+    "Vue.js Developer",
+    "Full Stack Developer",
+    "IT Student",
+    "Surakarta",
+    "Indonesia",
+    "Portfolio",
+    "WordPress Developer",
+    "Next.js",
+    "MySQL",
+    "Data Analyst"
+  ],
+  author: person.name,
+  siteUrl: "https://agoyeeee-portfolio.vercel.app/", // Replace with your actual domain
+  image: "/images/og/home.jpg",
+  twitterHandle: "@agoyeeee",
+  locale: "en_US",
+  type: "website"
+};
+
 const home = {
   path: "/",
   image: "/images/og/home.jpg",
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
+  seo: {
+    title: `${person.name} - ${person.role} | Portfolio`,
+    description: `Discover the portfolio of ${person.name}, a ${person.role} from Surakarta, Indonesia. Explore projects in web development, data analysis, and digital solutions using Laravel, Vue.js, Next.js, and more.`,
+    keywords: ["portfolio", "web developer", "software engineer", "Laravel", "Vue.js", "Next.js", "Surakarta"],
+    openGraph: {
+      title: `${person.name} - ${person.role}`,
+      description: `Portfolio showcasing innovative web development and software engineering projects`,
+      image: "/images/og/home.jpg",
+      url: seo.siteUrl,
+      type: "website"
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${person.name} - ${person.role}`,
+      description: `Portfolio showcasing innovative web development projects`,
+      image: "/images/og/home.jpg",
+      creator: seo.twitterHandle
+    }
+  },
   headline: <>Crafting Digital Experiences with Purpose and Passion</>,
   featured: {
     display: true,
@@ -73,6 +118,25 @@ const about = {
   label: "About",
   title: `About – ${person.name}`,
   description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  seo: {
+    title: `About ${person.name} - ${person.role}`,
+    description: `Learn about ${person.name}, an IT student and ${person.role} from Surakarta. Discover my journey in web development, data analysis, and digital innovation.`,
+    keywords: ["about", "biography", "software engineer", "IT student", "web developer", "Surakarta", "Indonesia"],
+    openGraph: {
+      title: `About ${person.name}`,
+      description: `IT student and Software Engineer passionate about web development and digital innovation`,
+      image: person.avatar,
+      url: `${seo.siteUrl}/about`,
+      type: "profile"
+    },
+    twitter: {
+      card: "summary",
+      title: `About ${person.name}`,
+      description: `IT student and Software Engineer from Surakarta, Indonesia`,
+      image: person.avatar,
+      creator: seo.twitterHandle
+    }
+  },
   tableOfContent: {
     display: true,
     subItems: false,
@@ -284,6 +348,25 @@ const blog = {
   label: "Blog",
   title: "Writing about design and tech...",
   description: `Read what ${person.name} has been up to recently`,
+  seo: {
+    title: `Blog - ${person.name}`,
+    description: `Read insights about web development, technology, and design from ${person.name}. Articles covering Laravel, Vue.js, Next.js, and modern web development practices.`,
+    keywords: ["blog", "web development", "technology", "programming", "Laravel", "Vue.js", "design"],
+    openGraph: {
+      title: `${person.name}'s Blog`,
+      description: `Insights about web development, technology, and design`,
+      image: "/images/og/blog.jpg",
+      url: `${seo.siteUrl}/blog`,
+      type: "website"
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${person.name}'s Blog`,
+      description: `Tech insights and web development articles`,
+      image: "/images/og/blog.jpg",
+      creator: seo.twitterHandle
+    }
+  },
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
 };
@@ -293,6 +376,25 @@ const work = {
   label: "Work",
   title: `Projects – ${person.name}`,
   description: `Design and dev projects by ${person.name}`,
+  seo: {
+    title: `Projects & Work - ${person.name}`,
+    description: `Explore the portfolio of projects by ${person.name}, including web development, data analysis, and digital solutions using modern technologies like Laravel, Vue.js, and Next.js.`,
+    keywords: ["projects", "portfolio", "web development", "Laravel projects", "Vue.js", "data analysis", "WordPress"],
+    openGraph: {
+      title: `Projects by ${person.name}`,
+      description: `Professional projects showcasing web development and software engineering expertise`,
+      image: "/images/og/work.jpg",
+      url: `${seo.siteUrl}/work`,
+      type: "website"
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `Projects by ${person.name}`,
+      description: `Web development and software engineering projects`,
+      image: "/images/og/work.jpg",
+      creator: seo.twitterHandle
+    }
+  },
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };
@@ -302,6 +404,25 @@ const gallery = {
   label: "Gallery",
   title: `Photo gallery – ${person.name}`,
   description: `A photo collection by ${person.name}`,
+  seo: {
+    title: `Photo Gallery - ${person.name}`,
+    description: `Browse through a curated photo collection by ${person.name}, showcasing moments and experiences.`,
+    keywords: ["gallery", "photos", "portfolio", "personal"],
+    openGraph: {
+      title: `${person.name}'s Photo Gallery`,
+      description: `A curated collection of photos and moments`,
+      image: "/images/og/gallery.jpg",
+      url: `${seo.siteUrl}/gallery`,
+      type: "website"
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${person.name}'s Gallery`,
+      description: `Photo collection and visual moments`,
+      image: "/images/og/gallery.jpg",
+      creator: seo.twitterHandle
+    }
+  },
   // Images by https://lorant.one
   // These are placeholder images, replace with your own
   images: [
@@ -348,4 +469,42 @@ const gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+// Structured Data for SEO
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": person.name,
+  "jobTitle": person.role,
+  "email": person.email,
+  "url": seo.siteUrl,
+  "image": `${seo.siteUrl}${person.avatar}`,
+  "sameAs": [
+    social.find(s => s.name === "GitHub")?.link,
+    social.find(s => s.name === "LinkedIn")?.link,
+    social.find(s => s.name === "X")?.link,
+  ].filter(Boolean),
+  "alumniOf": {
+    "@type": "Organization",
+    "name": "University of Sebelas Maret"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Surakarta",
+    "addressCountry": "Indonesia"
+  },
+  "knowsAbout": [
+    "Web Development",
+    "Software Engineering",
+    "Laravel",
+    "Vue.js",
+    "Next.js",
+    "WordPress",
+    "Data Analysis",
+    "MySQL",
+    "JavaScript",
+    "HTML",
+    "CSS"
+  ]
+};
+
+export { person, social, newsletter, home, about, blog, work, gallery, seo, structuredData };
