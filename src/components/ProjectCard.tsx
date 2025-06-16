@@ -67,9 +67,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                 <SmartLink
                   suffixIcon="arrowRight"
                   style={{ margin: "0", width: "fit-content" }}
-                  href={href}
+                  href="https://github.com/agoyeeee?tab=repositories"
                 >
-                  <Text variant="body-default-s">Read case study</Text>
+                  <Text variant="body-default-s">My Recent Project</Text>
                 </SmartLink>
               )}
               {link && (
