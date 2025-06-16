@@ -203,19 +203,8 @@ export default function About() {
                     <Text variant="body-default-s" onBackground="brand-weak" marginBottom="m">
                       {experience.role}
                     </Text>
-                    <Column as="ul" gap="16">
-                      {experience.achievements.map((achievement: JSX.Element, index: number) => (
-                        <Text
-                          as="li"
-                          variant="body-default-m"
-                          key={`${experience.company}-${index}`}
-                        >
-                          {achievement}
-                        </Text>
-                      ))}
-                    </Column>
                     {experience.images.length > 0 && (
-                      <Flex fillWidth paddingTop="m" paddingLeft="40" wrap>
+                      <Flex fillWidth paddingTop="m" paddingBottom="m" paddingLeft="40" wrap>
                         {experience.images.map((image, index) => (
                           <Flex
                             key={index}
@@ -240,6 +229,17 @@ export default function About() {
                         ))}
                       </Flex>
                     )}
+                    <Column as="ul" gap="16">
+                      {experience.achievements.map((achievement: JSX.Element, index: number) => (
+                        <Text
+                          as="li"
+                          variant="body-default-m"
+                          key={`${experience.company}-${index}`}
+                        >
+                          {achievement}
+                        </Text>
+                      ))}
+                    </Column>
                   </Column>
                 ))}
               </Column>
