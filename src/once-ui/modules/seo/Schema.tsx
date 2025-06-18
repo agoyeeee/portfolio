@@ -1,5 +1,5 @@
 import React from "react";
-import Script from "next/script";
+import Head from "next/head";
 import { social } from "@/app/resources/content";
 
 export interface SchemaProps {
@@ -54,15 +54,10 @@ export function Schema({
     "@context": "https://schema.org",
     "@type": schemaType,
     url,
+    sameAs: Object.values(social).filter(Boolean),
   };
-  
-  schema.sameAs = Object.values(social).filter(Boolean)
 
-  if (as === "website") {
-    schema.name = title;
-    schema.description = description;
-    schema.image = imageUrl;
-  } else if (as === "organization") {
+  if (as === "website" || as === "organization") {
     schema.name = title;
     schema.description = description;
     schema.image = imageUrl;
@@ -92,13 +87,11 @@ export function Schema({
   }
 
   return (
-    <Script
-      id={`schema-${as}-${path}`}
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify(schema),
-      }}
-    />
+    <Head>
+      <script type="application/ld+json">
+        {JSON.stringify(schema)}
+      </script>
+    </Head>
   );
 }
 
